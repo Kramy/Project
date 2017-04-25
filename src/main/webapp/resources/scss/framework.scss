@@ -1,0 +1,256 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+
+/* 
+    Created on : 13-jul-2016, 20:40:38
+    Author     : Rafael Benavides
+*/
+
+@import 'variables';
+
+html {
+    position: relative;
+    min-height: 100%;
+    body {
+        background: $colorFondo;
+        background-image: url("../../img/background/gplay.png");
+        .navbar-project {
+            background-color: $colorFondoPrimario;
+            border-color: #fff;
+            background-image: $imagenFondo;
+            .navbar-brand {
+                color: $colorTextoPrimario;
+                border-right: 1px solid #fff;
+                &:hover {
+                    color: $colorTextoHover;
+                    background-color: $colorFondoHover;
+                }
+                &:focus {
+                    color: $colorTextoFocus;
+                    background-color: $colorFondoFocus;
+                }
+            }
+            .navbar-text {
+                color: $colorTextoPrimario;
+            }
+            .navbar-nav {
+                margin-right: 0;
+                margin-left: 0;
+                border-right: 1px solid #fff;
+                > li {
+                    border-left: 1px solid #fff;
+                    > a {
+                        color: $colorTextoPrimario;
+                        &:hover {
+                            color: $colorTextoHover;
+                            background-color: $colorFondoHover;
+                        }
+                        &:focus {
+                            color: $colorTextoFocus;
+                            background-color: $colorFondoFocus;
+                        }
+                    }
+                }
+                > .active {
+                    > a {
+                        color: $colorTextoActive;
+                        background-color: $colorFondoActive;
+                        &:hover {
+                            color: $colorTextoActive;
+                            background-color: $colorFondoActive;
+                        }
+                        &:focus {
+                            color: $colorTextoActive;
+                            background-color: $colorFondoActive;
+                        }
+                    }
+                }
+                > .disabled {
+                    > a {
+                        color: $colorTextoDisabled;
+                        background-color: $colorFondoDisabled;
+                        &:hover {
+                            color: $colorTextoDisabled;
+                            background-color: $colorFondoDisabled;
+                        }
+                        &:focus {
+                            color: $colorTextoDisabled;
+                            background-color: $colorFondoDisabled;
+                        }
+                    }
+                }
+                > .open {
+                    > a {
+                        color: $colorTextoActive;
+                        background-color: $colorFondoActive;
+                        &:hover {
+                            color: $colorTextoActive;
+                            background-color: $colorFondoActive;
+                        }
+                        &:focus {
+                            color: $colorTextoActive;
+                            background-color: $colorFondoActive;
+                        }
+                    }
+                }
+                .open {
+                    @media (max-width: 767px) {
+                        .dropdown-menu {
+                            background-color: $colorFondoSecundario;
+                            border-radius: inherit;
+                            > .dropdown-header {
+                                border-color: $colorTextoSecundario;
+                            }
+                            .divider {
+                                background-color: $colorFondoPrimario;
+                            }
+                            > li {
+                                > a {
+                                    color: #9d9d9d;
+                                    &:hover {
+                                        color: #fff;
+                                        background-color: $colorFondoHover;
+                                    }
+                                    &:focus {
+                                        color: #fff;
+                                        background-color: $colorFondoFocus;
+                                    }
+                                }
+                            }
+                            > .active {
+                                background-color: transparent;
+                                > a {
+                                    color: #fff;
+                                    background-color: $colorFondoActive;
+                                    &:hover {
+                                        color: #fff;
+                                        background-color: $colorFondoActive;
+                                    }
+                                    &:focus {
+                                        color: #fff;
+                                        background-color: $colorFondoActive;
+                                    }
+                                }
+                            }
+                            > .disabled {
+                                > a {
+                                    color: $colorTextoDisabled;
+                                    background-color: $colorFondoDisabled;
+                                    &:hover {
+                                        color: $colorTextoDisabled;
+                                        background-color: $colorFondoDisabled;
+                                    }
+                                    &:focus {
+                                        color: $colorTextoDisabled;
+                                        background-color: $colorFondoDisabled;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                @media (max-width: 767px) {
+                    > li {
+                        border: 0;
+                    }
+                }
+            }
+            .navbar-toggle {
+                border-color: #fff;
+                &:hover {
+                    background-color: $colorFondoHover;
+                }
+                &:focus {
+                    background-color: $colorFondoFocus;
+                }
+                .icon-bar {
+                    background-color: $colorFondoSecundario;
+                }
+            }
+            .navbar-collapse {
+                border-color: #fff;
+            }
+            .navbar-form {
+                border-color: #101010;
+            }
+            .navbar-link {
+                color: $colorTextoPrimario;
+                &:hover {
+                    color: $colorTextoHover;
+                }
+                .btn-link {
+                    color: $colorTextoPrimario;
+                    &:hover {
+                        color: $colorTextoHover;
+                    }
+                    &[disabled]:hover {
+                        color: $colorTextoDisabled;
+                    }
+                    &:focus {
+                        color: $colorTextoFocus;
+                    }
+                    &[disabled]:focus {
+                        color: $colorTextoDisabled;
+                    }
+                }
+            }
+            @media (max-width: 767px) {
+                .navbar-nav {
+                    border: 1px solid #fff;
+                }
+            }
+        }
+        .cuerpo {
+            padding-top: 50px;
+            padding-bottom: 52px;
+            .login {
+                margin: 10% auto;
+                padding: 0 20px;
+                max-width: 515px;
+                .panel {
+                    .panel-heading {
+                        
+                    }
+
+                    .panel-body {
+                        ul {
+                            li {
+                                color: $colorFondoPrimario;
+                            }
+                        }
+                        hr {
+                            border-top: 1px solid $colorFondoPrimario;
+                            margin-top: 15px;
+                            margin-bottom: 15px;
+                        }
+                    }
+                }
+            }
+        }
+        .footer-proyect {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            margin-bottom: 0;
+            border-radius: 0;
+            border-color: #fff;
+            border-width: 1px 0 0 0;
+            footer {
+                color: $colorFondoSecundario;
+                margin-top: 2px;
+            }
+            .footer-module {
+                color: $colorFondoSecundario;
+                padding: 15px;
+                ul {
+                    li {
+                        list-style-type: none;
+                    }
+                }
+            }
+        }
+    }
+}

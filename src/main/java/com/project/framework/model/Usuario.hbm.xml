@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29-ene-2017 15:21:22 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.project.framework.model.Usuario" table="usuario" schema="public" optimistic-lock="version">
+        <comment>En esta tabla se guardar&#225;n los usuarios.</comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="rango" class="com.project.framework.model.Rango" fetch="select">
+            <column name="rango" not-null="true">
+                <comment>Identificador &#250;nico de rango.</comment>
+            </column>
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="nombre" not-null="true">
+                <comment>Nombre asociado a usuario.</comment>
+            </column>
+        </property>
+        <property name="apellido" type="string">
+            <column name="apellido">
+                <comment>Apellido asociado a usuario.</comment>
+            </column>
+        </property>
+        <set name="cuentas" table="cuenta" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="usuario" not-null="true">
+                    <comment>Identificador &#250;nico de usuario.</comment>
+                </column>
+            </key>
+            <one-to-many class="com.project.framework.model.Cuenta" />
+        </set>
+    </class>
+</hibernate-mapping>

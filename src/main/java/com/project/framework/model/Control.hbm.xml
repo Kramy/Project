@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29-ene-2017 15:21:22 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.project.framework.model.Control" table="control" schema="public" optimistic-lock="version">
+        <comment>En esta tabla se guardar&#225;n los controles.</comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="aplicacion" class="com.project.framework.model.Aplicacion" fetch="select">
+            <column name="aplicacion" not-null="true">
+                <comment>Identificador &#250;nico de aplicacion.</comment>
+            </column>
+        </many-to-one>
+        <property name="texto" type="string">
+            <column name="texto" not-null="true">
+                <comment>Texto asociado a control.</comment>
+            </column>
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion">
+                <comment>Descripci&#243;n asociada a control.</comment>
+            </column>
+        </property>
+        <property name="valor" type="string">
+            <column name="valor" not-null="true">
+                <comment>Valor asociado a control.</comment>
+            </column>
+        </property>
+        <property name="orden" type="int">
+            <column name="orden" not-null="true">
+                <comment>Orden asociado a control.</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

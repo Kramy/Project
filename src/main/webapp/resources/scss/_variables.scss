@@ -1,0 +1,35 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 25-ene-2017, 22:11:36
+    Author     : Rafael Benavides
+*/
+
+/* - Variables Globales - */
+$colorFondoPrimario: #337ab7;
+$colorFondoSecundario: #fff;
+$colorFondoHover: #23639a;
+$colorFondoFocus: #265a88;
+$colorFondoActive: #265a88;
+$colorFondoDisabled: #729dc1;
+
+$colorTextoPrimario: #fff;
+$colorTextoSecundario: #337ab7;
+$colorTextoHover: #fff;
+$colorTextoFocus: #fff;
+$colorTextoActive: #fff;
+$colorTextoDisabled: #fff;
+
+$colorFondo: #f2f2f2;
+$imagenFondo: linear-gradient(to bottom, $colorFondoPrimario 0%, $colorFondoHover 100%);
+
+/* - Mixin - */
+@mixin border-radius($args) {
+    -webkit-border-radius: $args;
+       -moz-border-radius: $args;
+        -ms-border-radius: $args;
+            border-radius: $args;
+}
