@@ -16,7 +16,7 @@
     <mvc:annotation-driven />
     
     <!-- Maneja los controladores sin necesidad de definerlos en un Bean -->
-    <context:component-scan base-package="com.project." />
+    <context:component-scan base-package="com.project" />
     
     <!-- Indica la ruta de los recursos -->
     <!--<mvc:resources mapping="/resources/**" location="/resources/" />-->
@@ -46,7 +46,7 @@
     <!-- Indica la ruta de las vistas y la extensión con las que se tratan -->
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-          p:prefix="/WEB-INF/view/"
+          p:prefix="/WEB-INF/views/"
           p:suffix=".jsp" />
 
 </beans>
