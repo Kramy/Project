@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 
 @Controller
-public class opcHeaderController {
-    @RequestMapping(value = "/opcHeader", method = {RequestMethod.GET, RequestMethod.POST})
-    public String setOpcHeader(ModelMap m) {
-        return "framework/opcHeader";
+public class BodyController {
+    @RequestMapping(value = "/body", method = {RequestMethod.GET, RequestMethod.POST})
+    public String setOpcBody(ModelMap m) {
+        return "framework/body";
     }
 }

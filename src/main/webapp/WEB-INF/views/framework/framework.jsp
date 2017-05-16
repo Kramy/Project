@@ -37,22 +37,10 @@
     </head>
 
     <body>
-        <nav class="navbar navbar-project navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="${pageContext.request.contextPath}/framework.htm">PROJECT</a>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <jsp:include page="${request.contextPath}/opcHeader.htm"></jsp:include>
-                </div>
-            </div>
-        </nav>
+        <!-- Header -->
+        <jsp:include page="${request.contextPath}/header.htm"></jsp:include>
         
+        <!-- Body -->
         <div class="container-fluid cuerpo">
             <c:choose>
                 <c:when test="${cuenta == null}">
@@ -60,21 +48,13 @@
                 </c:when>
                 
                 <c:when test="${cuenta == 1}">
-                    <jsp:include page="${request.contextPath}/opcBody.htm"></jsp:include>
+                    <jsp:include page="${request.contextPath}/body.htm"></jsp:include>
                 </c:when>
             </c:choose>
         </div>
-                    
-        <nav class="navbar navbar-project footer-proyect">
-            <div class="container footer-module">
-                <footer class="text-center">
-                    <small>
-                        <i class="fa fa-copyright" aria-hidden="true"></i> 2017 Project.
-                        <spring:message code="framework.framework.small.derechos" text="Todos los derechos reservados." />
-                    </small>
-                </footer>
-            </div>
-        </nav>
+        
+        <!-- Footer -->
+        <jsp:include page="${request.contextPath}/footer.htm"></jsp:include>
     </body>
 </html>
 
