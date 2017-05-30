@@ -23,20 +23,22 @@
                     <a class="navbar-brand" href="${pageContext.request.contextPath}/framework.htm">PROJECT</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
+                    <c:if test="${cuenta == 1}">
+                        <ul class="nav navbar-nav">
+                                <li class="disabled">
+                                    <a href="#">
+                                        <i class="glyphicon glyphicon-cog" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                        </ul>
+                    </c:if>
+                    
                     <ul class="nav navbar-nav navbar-right">
                         <li class="disabled">
                             <a href="#">
                                 <i class="fa fa-envelope-o" aria-hidden="true"></i>
                             </a>
                         </li>
-
-                        <c:if test="${cuenta == 1}">
-                            <li class="disabled">
-                                <a href="#">
-                                    <i class="glyphicon glyphicon-cog" aria-hidden="true"></i>
-                                </a>
-                            </li>
-                        </c:if>
 
                         <c:if test="${cuenta == 1}">
                             <li class="">
