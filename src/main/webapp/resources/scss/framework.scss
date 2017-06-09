@@ -247,7 +247,7 @@ html {
                     border-top: 1px solid #fff;
                 }
                 .footer-module {
-                    text-align: center;
+                    text-align: right;
                     > ul {
                         margin-top: 10px;
                         > li {
@@ -263,18 +263,16 @@ html {
                         }
                     }
                 }
-                
                 .footer-copyright {
                     margin-top: 15px;
-                    margin-right: 15px;
                     margin-bottom: 15px;
-                    text-align: right;
                 }
-                
                 @media (max-width: 1199px) {
+                    .footer-module {
+                        text-align: center;
+                    }
                     .footer-copyright {
                         margin-right: 0px;
-                        text-align: center;
                     }
                 }
             }

@@ -175,7 +175,7 @@ html {
         html body .footer-proyect footer .footer-section {
           border-top: 1px solid #fff; }
         html body .footer-proyect footer .footer-module {
-          text-align: center; }
+          text-align: right; }
           html body .footer-proyect footer .footer-module > ul {
             margin-top: 10px; }
             html body .footer-proyect footer .footer-module > ul > li:not(:first-child):before {
@@ -187,13 +187,12 @@ html {
               cursor: pointer; }
         html body .footer-proyect footer .footer-copyright {
           margin-top: 15px;
-          margin-right: 15px;
-          margin-bottom: 15px;
-          text-align: right; }
+          margin-bottom: 15px; }
         @media (max-width: 1199px) {
+          html body .footer-proyect footer .footer-module {
+            text-align: center; }
           html body .footer-proyect footer .footer-copyright {
-            margin-right: 0px;
-            text-align: center; } }
+            margin-right: 0px; } }
 
 .dropdown .dropdown-menu:before {
   position: absolute;

@@ -16,7 +16,7 @@
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <i class="glyphicon glyphicon glyphicon-edit" aria-hidden="true"></i>
-                <span><spring:message code="framework.registro.span.cabecera" text="Registro de usuario" /></span>
+                <span><spring:message code="framework.registro.span.cabecera" /></span>
             </div>
             <div class="panel-body">
                 <f:form modelAttribute="registro">

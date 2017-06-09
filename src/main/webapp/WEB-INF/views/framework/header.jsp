@@ -15,15 +15,17 @@
         <nav class="navbar navbar-project navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+                    <c:if test="${cuenta == 1}">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </c:if>
                     <a class="navbar-brand" href="${pageContext.request.contextPath}/framework.htm">PROJECT</a>
                 </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <c:if test="${cuenta == 1}">
+                <c:if test="${cuenta == 1}">
+                    <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
                                 <li class="disabled">
                                     <a href="#">
@@ -31,23 +33,21 @@
                                     </a>
                                 </li>
                         </ul>
-                    </c:if>
                     
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="disabled">
-                            <a href="#">
-                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                            </a>
-                        </li>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="disabled">
+                                <a href="#">
+                                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                </a>
+                            </li>
 
-                        <c:if test="${cuenta == 1}">
                             <li class="">
                                 <a href="${pageContext.request.contextPath}/logout.htm">
                                     <i class="fa fa-sign-out" aria-hidden="true"></i>
                                 </a>
                             </li>
-                        </c:if>
-                    </ul>
+                        </ul>
+                    </c:if>
                 </div>
             </div>
         </nav>

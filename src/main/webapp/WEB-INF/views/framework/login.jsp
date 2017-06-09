@@ -20,7 +20,7 @@
                 <div class="panel-heading">
                     <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
                     <span>
-                        <spring:message code="framework.login.span.cabecera" text="Identificación de Usuario" />
+                        <spring:message code="framework.login.span.cabecera" />
                     </span>
                 </div>
                 <div class="panel-body">
@@ -28,16 +28,16 @@
                         <fieldset>
                             <div class="form-group">
                                 <f:label path="email" cssClass="control-label sr-only">
-                                    <spring:message code="framework.login.label.usuario" text="Nombre de Usuario o Email:" />
+                                    <spring:message code="framework.login.label.usuario" />
                                 </f:label>
-                                <spring:message code='framework.login.input.usuario' text='Nombre de usuario o Email' var="placeholder" />
+                                <spring:message code='framework.login.input.usuario' var="placeholder" />
                                 <f:input path="email" cssClass="form-control" placeholder="${placeholder}" autofocus="autofocus" />
                             </div>
                             <div class="form-group">
                                 <f:label path="contrasena" cssClass="control-label sr-only">
-                                    <spring:message code="framework.login.label.contrasena" text="Contraseña:" />
+                                    <spring:message code="framework.login.label.contrasena" />
                                 </f:label>
-                                <spring:message code='framework.login.input.contrasena' text='Contraseña' var="placeholder" />
+                                <spring:message code="framework.login.input.contrasena" var="placeholder" />
                                 <f:input path="contrasena" cssClass="form-control" type="password" placeholder="${placeholder}" />
                             </div>
                             <c:choose>
@@ -47,7 +47,7 @@
                                             <div class="text-right">
                                                 <input type="checkbox" id="chkRecordar" />
                                                 <label for="chkRecordar">
-                                                    <spring:message code="framework.login.label.recordar" text="Recordar mis datos" />
+                                                    <spring:message code="framework.login.label.recordar" />
                                                 </label>
                                             </div>
                                         </div>
@@ -56,14 +56,14 @@
                             </c:choose>
                             <div class="form-group">
                                 <f:button type="submit" class="btn btn-primary btn-block">
-                                    <spring:message code="framework.login.button.login" text="Iniciar sesión" />
+                                    <spring:message code="framework.login.button.login" />
                                 </f:button>
                             </div>
                             <c:choose>
                                 <c:when test="${Control.recuperar}">
                                     <div class=" text-center">
                                         <a href="#" id="recuperar" class="">
-                                            <spring:message code="framework.login.a.recuperar" text="¿No puedes iniciar sesión?" />
+                                            <spring:message code="framework.login.a.recuperar" />
                                         </a>
                                     </div>
                                 </c:when>
@@ -76,12 +76,12 @@
                                 <hr>
                                 <div class="col-sm-8">
                                     <p class="text-center">
-                                        <spring:message code="framework.login.p.registro" text="¿Todavía no tienes una cuenta?" />
+                                        <spring:message code="framework.login.p.registro" />
                                     </p>
                                 </div>
                                 <div class="col-sm-4">
                                     <button type="button" id="registrar" class="btn btn-sm btn-primary btn-block">
-                                        <spring:message code="framework.login.button.registro" text="Crear cuenta" />
+                                        <spring:message code="framework.login.button.registro" />
                                     </button>
                                 </div>
                             </div>
@@ -91,9 +91,9 @@
             </div>
             <div class="text-center">
                 <p>
-                    <spring:message code="framework.login.span.consulta" text="Si tiene algún problema o duda puede consultar nuestras FAQs a través del siguiente" />
+                    <spring:message code="framework.login.span.consulta" />
                     <a href="#">
-                        <spring:message code="framework.login.a.consulta" text="enlace" />
+                        <spring:message code="framework.login.a.consulta" />
                     </a>.
                 </p>
             </div>

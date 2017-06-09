@@ -16,7 +16,7 @@
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <i class="glyphicon glyphicon-share" aria-hidden="true"></i>
-                <span><spring:message code="framework.recuperar.span.cabecera" text="Recuperar Contraseña" /></span>
+                <span><spring:message code="framework.recuperar.span.cabecera" /></span>
             </div>
             <div class="panel-body">
                 <f:form modelAttribute="recuperar">

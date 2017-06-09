@@ -20,44 +20,45 @@
                         <ul class="list-inline">
                             <li>
                                 <a href="#">
-                                    <spring:message code="framework.footer.a.informacion" text="Información" />
+                                    <spring:message code="framework.footer.a.informacion" />
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <spring:message code="framework.footer.a.soporte" text="Soporte" />
+                                    <spring:message code="framework.footer.a.soporte" />
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <spring:message code="framework.footer.a.sugerencias" text="Sugerencias" />
+                                    <spring:message code="framework.footer.a.sugerencias" />
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <spring:message code="framework.footer.a.privacidad" text="Privacidad" />
+                                    <spring:message code="framework.footer.a.privacidad" />
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <spring:message code="framework.footer.a.condiciones" text="Condiciones" />
+                                    <spring:message code="framework.footer.a.condiciones" />
                                 </a>
                             </li>
                             <li class="dropup">
-                                <a class="dropup-toggle" data-toggle="dropdown" href="#">
-                                    <!--<i class="glyphicon glyphicon-globe" aria-hidden="true"></i>-->
-                                    <spring:message code="framework.footer.a.idioma" text="Idioma" />
-                                    <!--<span class="caret"></span>-->
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <spring:message code="framework.footer.a.idioma" />
                                 </a>
                                 <ul class="dropdown-menu pull-right" role="menu">
+                                    <li class="dropdown-header">
+                                        <spring:message code="framework.footer.a.europa" />
+                                    </li>
                                     <li>
                                         <a href="?lang=es">
-                                            <spring:message code="framework.footer.a.espanol" text="Español (EU)" />
+                                            <spring:message code="framework.footer.a.espanol" />
                                         </a>
                                     </li>
                                     <li>
                                         <a href="?lang=en">
-                                            <spring:message code="framework.footer.a.ingles" text="Inglés (EU)." />
+                                            <spring:message code="framework.footer.a.ingles" />
                                         </a>
                                     </li>
                                 </ul>
@@ -66,10 +67,12 @@
                     </div>
                 </div>
                 <div class="row footer-section">
-                    <p class="footer-copyright">
-                        <i class="fa fa-copyright" aria-hidden="true"></i> 2017 Project.
-                        <spring:message code="framework.footer.small.derechos" text="Todos los derechos reservados." />
-                    </p>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 footer-module">
+                        <p class="footer-copyright">
+                            <i class="fa fa-copyright" aria-hidden="true"></i> 2017 Project.
+                            <spring:message code="framework.footer.small.derechos" />
+                        </p>
+                    </div>
                 </div>
             </footer>
         </div>
