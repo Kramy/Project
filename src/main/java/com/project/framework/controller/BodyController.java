@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class BodyController {
     @RequestMapping(value = "/body", method = {RequestMethod.GET, RequestMethod.POST})
-    public String setOpcBody(ModelMap m) {
+    public String setBody(ModelMap m) {
         return "framework/body";
     }
 }
