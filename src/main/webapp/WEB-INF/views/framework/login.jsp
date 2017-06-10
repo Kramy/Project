@@ -4,7 +4,7 @@
     Author     : Rafael Benavides
 --%>
 
-<%@ page import="com.project.misc.Control" %>
+<%@ page import="com.project.util.Control" %>
 <%@ page contentType="text/html" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
