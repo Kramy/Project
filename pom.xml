@@ -17,10 +17,9 @@
         
         <!-- Versión de dependencias -->
         <spring.version>4.3.8.RELEASE</spring.version>
-        <hibernate.version>5.2.9.Final</hibernate.version>
+        <hibernate.version>5.2.10.Final</hibernate.version>
         <hibernate.annotations.version>3.5.6-Final</hibernate.annotations.version>
-        <postgresql.version>42.0.0</postgresql.version>
-        <!--<webjars-locator.version>0.32-1</webjars-locator.version>-->
+        <postgresql.version>42.1.1</postgresql.version>
         <bootstrap.version>3.3.7</bootstrap.version>
         <jquery.version>1.12.4</jquery.version>
         <font-awesome.version>4.7.0</font-awesome.version>
@@ -41,25 +40,37 @@
             <version>${spring.version}</version>
         </dependency>
         
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        
         <!-- Hibernate -->
-<!--        <dependency>
+        <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>${hibernate.version}</version>
-        </dependency>-->
+        </dependency>
         
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-annotations</artifactId>
             <version>${hibernate.annotations.version}</version>
         </dependency>
-        
+
         <!-- PostgreSQL -->
-<!--        <dependency>
+        <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>${postgresql.version}</version>
-        </dependency>-->
+        </dependency>
         
         <!-- JSTL -->
         <dependency>
@@ -88,13 +99,6 @@
             <artifactId>font-awesome</artifactId>
             <version>${font-awesome.version}</version>
         </dependency>
-        
-        <!-- Buscador de dependencias -->
-<!--        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>webjars-locator</artifactId>
-            <version>${webjars-locator.version}</version>
-        </dependency>-->
     </dependencies>
 
     <build>
