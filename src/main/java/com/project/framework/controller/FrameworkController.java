@@ -28,11 +28,11 @@ public class FrameworkController {
     }
     
     @RequestMapping(value = "/framework", method = RequestMethod.POST)
-    public String logIn(@ModelAttribute("logon") Cuenta c, ModelMap model) {
-        model.addAttribute("email", c.getEmail());
-        model.addAttribute("seudonimo", c.getEmail());
-        model.addAttribute("contrasena", c.getContrasena());
-        model.addAttribute("cuenta", 1);
+    public String logIn(@ModelAttribute("logon") Cuenta c, ModelMap m) {
+        m.addAttribute("email", c.getEmail());
+        m.addAttribute("seudonimo", c.getEmail());
+        m.addAttribute("contrasena", c.getContrasena());
+        m.addAttribute("cuenta", 1);
         return "framework/framework";
     }
 }
