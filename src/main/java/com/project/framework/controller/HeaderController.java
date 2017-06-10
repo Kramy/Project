@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class HeaderController {
     @RequestMapping(value = "/header", method = {RequestMethod.GET, RequestMethod.POST})
-    public String setOpcHeader(ModelMap m) {
+    public String setHeader(ModelMap m) {
         return "framework/header";
     }
 }
