@@ -186,8 +186,8 @@ html {
               color: #fff;
               cursor: pointer; }
         html body .footer-proyect footer .footer-copyright {
-          margin-top: 15px;
-          margin-bottom: 15px; }
+          margin-top: 10px;
+          margin-bottom: 10px; }
         @media (max-width: 1199px) {
           html body .footer-proyect footer .footer-module {
             text-align: center; }
