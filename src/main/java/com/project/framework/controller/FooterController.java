@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class FooterController {
     @RequestMapping(value = "/footer", method = {RequestMethod.GET, RequestMethod.POST})
-    public String setOpcHeader(ModelMap m) {
+    public String setFooter(ModelMap m) {
         return "framework/footer";
     }
 }
