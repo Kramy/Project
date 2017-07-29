@@ -48,9 +48,11 @@
                                     <spring:message code="framework.footer.a.idioma" />
                                 </a>
                                 <ul class="dropdown-menu pull-right" role="menu">
-                                    <li class="dropdown-header">
-                                        <spring:message code="framework.footer.a.europa" />
-                                    </li>
+                                    <c:forEach items="${listContinentes}" var="continente">
+                                        <li class="dropdown-header">
+                                            <spring:message code="framework.footer.a.${continente.texto}" />
+                                        </li>
+                                    </c:forEach>
                                     <li>
                                         <a href="?lang=es">
                                             <spring:message code="framework.footer.a.espanol" />
