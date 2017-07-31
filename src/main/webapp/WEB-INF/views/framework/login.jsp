@@ -9,6 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ page trimDirectiveWhitespaces="true" %>
 
 <html>
     <head>
@@ -42,14 +43,12 @@
                             </div>
                             <c:choose>
                                 <c:when test="${Control.recordar}">
-                                    <div class="form-group">
+                                    <div class="form-group text-right">
                                         <div class="checkbox">
-                                            <div class="text-right">
-                                                <input type="checkbox" id="chkRecordar" />
-                                                <label for="chkRecordar">
-                                                    <spring:message code="framework.login.label.recordar" />
-                                                </label>
-                                            </div>
+                                            <input type="checkbox" id="chkRecordar" />
+                                            <label for="chkRecordar" class="text-left">
+                                                <spring:message code="framework.login.label.recordar" />
+                                            </label>
                                         </div>
                                     </div>
                                 </c:when>
