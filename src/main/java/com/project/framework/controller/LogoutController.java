@@ -21,6 +21,6 @@ public class LogoutController {
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logOut(HttpSession session) {
         session.invalidate();
-        return "framework/framework";
+        return "redirect:/framework.htm";
     }
 }
