@@ -16,7 +16,7 @@ public interface ContinenteDAO {
     
     public void addContinente(Continente c);
     public void updateContinente(Continente c);
-    public List<Continente> listContinentes();
-    public Continente getContinenteById(int id);
-    public void removeContinente(int id);
+    public List<Continente> getContinentes();
+    public Continente getContinente(int id);
+    public void deleteContinente(int id);
 }

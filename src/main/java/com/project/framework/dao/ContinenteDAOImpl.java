@@ -6,57 +6,58 @@
 package com.project.framework.dao;
 
 import com.project.framework.model.Continente;
+import com.project.hibernate.HibernateUtil;
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author rbt
  */
-@Repository
+@Transactional
+@Repository("continenteDAO")
 public class ContinenteDAOImpl implements ContinenteDAO {
     
-    private SessionFactory sessionFactory;
-    
-    public void setSessionFactory(SessionFactory sf) {
-        this.sessionFactory = sf;
-    }
+    @PersistenceContext
+    public EntityManager entityManager;
     
     @Override
+    @Transactional(readOnly=false)
     public void addContinente(Continente c) {
-        Session session = this.sessionFactory.getCurrentSession();
-        session.persist(c);
+        entityManager.persist(c);
     }
     
     @Override
+    @Transactional(readOnly=false)
     public void updateContinente(Continente c) {
-        Session session = this.sessionFactory.getCurrentSession();
-        session.update(c);
+        entityManager.merge(c);
     }
     
-    @SuppressWarnings("unchecked")
     @Override
-    public List<Continente> listContinentes() {
-        Session session = this.sessionFactory.getCurrentSession();
-        List<Continente> continentesList = session.createQuery("from Continente").list();
+    @Transactional(readOnly=true)
+    public List<Continente> getContinentes() {
+        List<Continente> continentesList = entityManager.createQuery("from Continente").getResultList();
         return continentesList;
     }
     
     @Override
-    public Continente getContinenteById(int id) {
-        Session session = this.sessionFactory.getCurrentSession();
-        Continente c = (Continente) session.load(Continente.class, id);
+    @Transactional(readOnly=true)
+    public Continente getContinente(int id) {
+        Continente c = (Continente) entityManager.find(Continente.class, id);
         return c;
     }
     
     @Override
-    public void removeContinente(int id) {
-        Session session = this.sessionFactory.getCurrentSession();
-        Continente c = (Continente) session.load(Continente.class, id);
+    @Transactional(readOnly=false)
+    public void deleteContinente(int id) {
+        Continente c = (Continente) entityManager.find(Continente.class, id);
         if (null != c) {
-            session.delete(c);
+            entityManager.remove(c);
         }
     }
 }

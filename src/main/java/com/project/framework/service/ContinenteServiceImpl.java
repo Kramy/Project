@@ -17,15 +17,13 @@ import org.springframework.transaction.annotation.Transactional;
  *
  * @author rbt
  */
-@Service
+@Transactional
+@Service("continenteService")
 public class ContinenteServiceImpl implements ContinenteService {
     
-    @Autowired
+    @Autowired(required=true)
+    @Qualifier("continenteDAO")
     private ContinenteDAO continenteDAO;
-    
-    public void setContinenteDAO(ContinenteDAO continenteDAO) {
-        this.continenteDAO = continenteDAO;
-    }
     
     @Override
     @Transactional
@@ -41,19 +39,19 @@ public class ContinenteServiceImpl implements ContinenteService {
     
     @Override
     @Transactional
-    public List<Continente> listContinentes() {
-        return this.continenteDAO.listContinentes();
+    public List<Continente> getContinentes() {
+        return this.continenteDAO.getContinentes();
     }
     
     @Override
     @Transactional
-    public Continente getContinenteById(int id) {
-        return this.continenteDAO.getContinenteById(id);
+    public Continente getContinente(int id) {
+        return this.continenteDAO.getContinente(id);
     }
     
     @Override
     @Transactional
-    public void removeContinente(int id) {
-        this.continenteDAO.removeContinente(id);
+    public void deleteContinente(int id) {
+        this.continenteDAO.deleteContinente(id);
     }
 }

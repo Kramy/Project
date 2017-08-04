@@ -2,39 +2,28 @@
 <web-app version="3.1" 
          xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     
-    <!-- Parámetros de contexto -->
-    <context-param>
-        <param-name>bootstrapVersion</param-name>
-        <param-value>${bootstrap.version}</param-value>
-    </context-param>
-    
-    <context-param>
-        <param-name>jqueryVersion</param-name>
-        <param-value>${jquery.version}</param-value>
-    </context-param>
-    
-    <context-param>
-        <param-name>fontAwesomeVersion</param-name>
-        <param-value>${font-awesome.version}</param-value>
-    </context-param>
-    
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/applicationContext.xml</param-value>
-    </context-param>
+    <!-- Indica la página inicial de la web -->
+    <welcome-file-list>
+        <welcome-file>redirect.jsp</welcome-file>
+    </welcome-file-list>
     
     <!-- Listeners -->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/applicationContext.xml</param-value>
+    </context-param>
     
     <!-- Servlets -->
     <servlet>
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <load-on-startup>2</load-on-startup>
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
@@ -47,11 +36,6 @@
             1
         </session-timeout>
     </session-config>
-    
-    <!-- Indica la página inicial de la web -->
-    <welcome-file-list>
-        <welcome-file>redirect.jsp</welcome-file>
-    </welcome-file-list>
     
     <!-- Establece la codificación de carácteres deseada -->
     <filter>
@@ -70,4 +54,21 @@
         <filter-name>encodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+    
+    <!-- Parámetros de contexto -->
+    <context-param>
+        <param-name>bootstrapVersion</param-name>
+        <param-value>${bootstrap.version}</param-value>
+    </context-param>
+    
+    <context-param>
+        <param-name>jqueryVersion</param-name>
+        <param-value>${jquery.version}</param-value>
+    </context-param>
+    
+    <context-param>
+        <param-name>fontAwesomeVersion</param-name>
+        <param-value>${font-awesome.version}</param-value>
+    </context-param>
+    
 </web-app>
