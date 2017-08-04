@@ -25,11 +25,4 @@ $colorTextoDisabled: #fff;
 
 $colorFondo: #f2f2f2;
 $imagenFondo: linear-gradient(to bottom, $colorFondoPrimario 0%, $colorFondoHover 100%);
-
-/* - Mixin - */
-@mixin border-radius($args) {
-    -webkit-border-radius: $args;
-       -moz-border-radius: $args;
-        -ms-border-radius: $args;
-            border-radius: $args;
-}
+$imagenFondoWeb: url("../img/background/gplay.png");

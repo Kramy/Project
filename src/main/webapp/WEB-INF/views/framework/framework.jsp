@@ -24,8 +24,8 @@
         <link rel="stylesheet" href="<spring:url value="/webjars/bootstrap/${initParam.bootstrapVersion}/css/bootstrap.min.css" />" />
         <link rel="stylesheet" href="<spring:url value="/webjars/bootstrap/${initParam.bootstrapVersion}/css/bootstrap-theme.min.css" />" />
         <link rel="stylesheet" href="<spring:url value="/webjars/font-awesome/${initParam.fontAwesomeVersion}/css/font-awesome.min.css" />" />
-        <link rel="stylesheet" href="<spring:url value="/resources/scss/css/framework.css" />" />
-        <link rel="stylesheet" href="<spring:url value="/resources/scss/css/awesome-bootstrap-checkbox.css" />" />
+        <link rel="stylesheet" href="<spring:url value="/resources/css/main.css" />" />
+        <link rel="stylesheet" href="<spring:url value="/resources/css/awesome-bootstrap-checkbox.css" />" />
         
         <!-- Javascripts -->
         <script>

@@ -9,14 +9,12 @@ and open the template in the editor.
     Author     : Rafael Benavides
 */
 
-@import 'variables';
-
 html {
     position: relative;
     min-height: 100%;
     body {
         background: $colorFondo;
-        background-image: url("../../img/background/gplay.png");
+        background-image: $imagenFondoWeb;
         .navbar-project {
             background-color: $colorFondoPrimario;
             border-color: #fff;
