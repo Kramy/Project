@@ -6,58 +6,43 @@
 package com.project.framework.dao;
 
 import com.project.framework.model.Continente;
-import com.project.hibernate.HibernateUtil;
 import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import org.hibernate.Session;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author rbt
  */
-@Transactional
-@Repository("continenteDAO")
-public class ContinenteDAOImpl implements ContinenteDAO {
-    
-    @PersistenceContext
-    public EntityManager entityManager;
+@Repository
+public class ContinenteDAOImpl extends AbstractDAO implements ContinenteDAO {
     
     @Override
-    @Transactional(readOnly=false)
     public void addContinente(Continente c) {
-        entityManager.persist(c);
+        getSession().persist(c);
     }
     
     @Override
-    @Transactional(readOnly=false)
     public void updateContinente(Continente c) {
-        entityManager.merge(c);
+        getSession().update(c);
     }
     
     @Override
-    @Transactional(readOnly=true)
     public List<Continente> getContinentes() {
-        List<Continente> continentesList = entityManager.createQuery("from Continente").getResultList();
-        return continentesList;
+        return getSession().createQuery("from Continente").list();
     }
     
     @Override
-    @Transactional(readOnly=true)
     public Continente getContinente(int id) {
-        Continente c = (Continente) entityManager.find(Continente.class, id);
-        return c;
+        return getSession().load(Continente.class, id);
     }
     
     @Override
-    @Transactional(readOnly=false)
     public void deleteContinente(int id) {
-        Continente c = (Continente) entityManager.find(Continente.class, id);
+        Continente c = (Continente) getSession().load(Continente.class, id);
         if (null != c) {
-            entityManager.remove(c);
+            getSession().delete(c);
         }
     }
 }

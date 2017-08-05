@@ -14,7 +14,8 @@
     <context:annotation-config />
     
     <!-- Escanea la ruta y crea los Bean @Controller, @Repository, @Service, etc -->
-    <context:component-scan base-package="com.project" />
+    <context:component-scan base-package="com.project.framework.dao" />
+    <context:component-scan base-package="com.project.framework.service" />
     
     <!-- Activa la transacción declarativa a traves de @Transactional -->
     <tx:annotation-driven transaction-manager="transactionManager" />
@@ -26,26 +27,23 @@
         <property name="password" value="postgres"></property>
     </bean>
     
-    <bean class="org.springframework.orm.jpa.JpaTransactionManager" id="transactionManager">
-        <property name="entityManagerFactory" ref="entityManagerFactory"></property>
+    <bean class="org.springframework.orm.hibernate5.HibernateTransactionManager" id="transactionManager">
+        <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
     
-    <bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" id="entityManagerFactory">
+    <bean class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" id="sessionFactory">
         <property name="dataSource" ref="dataSource"></property>
-        <property name="persistenceUnitName" value="spring-jpa-unit"></property>
-        <property name="jpaVendorAdapter">
-            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
-        </property>
-        <property name="jpaProperties">
+        <property name="packagesToScan" value="com.project.framework.model"></property>
+        <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+                <prop key="hibernate.use_sql_comments">false</prop>
                 <prop key="hibernate.show_sql">true</prop>
-                <prop key="hibernate.format_sql">false</prop>
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.default_schema">public</prop>
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
             </props>
         </property>
     </bean>
-    
-    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
 
 </beans>

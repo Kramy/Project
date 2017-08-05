@@ -14,7 +14,7 @@
     <mvc:annotation-driven />
     
     <!-- Escanea la ruta y crea los Bean @Controller, @Repository, @Service, etc -->
-    <context:component-scan base-package="com.project" />
+    <context:component-scan base-package="com.project.framework.controller" />
     
     <!-- Indica la ruta de los recursos -->
     <!--<mvc:resources mapping="/resources/**" location="/resources/" />-->
