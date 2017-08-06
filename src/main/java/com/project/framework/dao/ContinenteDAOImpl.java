@@ -7,8 +7,7 @@ package com.project.framework.dao;
 
 import com.project.framework.model.Continente;
 import java.util.List;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.hibernate.Hibernate;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -20,7 +19,7 @@ public class ContinenteDAOImpl extends AbstractDAO implements ContinenteDAO {
     
     @Override
     public void addContinente(Continente c) {
-        getSession().persist(c);
+        getSession().save(c);
     }
     
     @Override
@@ -30,17 +29,22 @@ public class ContinenteDAOImpl extends AbstractDAO implements ContinenteDAO {
     
     @Override
     public List<Continente> getContinentes() {
-        return getSession().createQuery("from Continente").list();
+        List<Continente> continentes = getSession().createQuery("from Continente").list();
+        for (Continente continente: continentes) {
+            Hibernate.initialize(continente.getIdiomas());
+        }
+        return continentes;
     }
     
     @Override
     public Continente getContinente(int id) {
-        return getSession().load(Continente.class, id);
+        Continente c = (Continente) getSession().get(Continente.class, id);
+        return c;
     }
     
     @Override
     public void deleteContinente(int id) {
-        Continente c = (Continente) getSession().load(Continente.class, id);
+        Continente c = (Continente) getSession().get(Continente.class, id);
         if (null != c) {
             getSession().delete(c);
         }

@@ -10,30 +10,32 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "continente", schema = "public")
-public class Continente implements java.io.Serializable {
+@Table(name = "rango", schema = "public")
+public class Rango implements java.io.Serializable {
 
-    public Continente() {}
-
-    public Continente(int id) {
-        this.id = id;
+    public Rango() {
     }
 
-    public Continente(int id, String texto, Set<Idioma> idiomas) {
+    public Rango(int id, String texto) {
         this.id = id;
         this.texto = texto;
-        this.idiomas = idiomas;
+    }
+
+    public Rango(int id, String texto, Set<Usuario> usuarios) {
+        this.id = id;
+        this.texto = texto;
+        this.usuarios = usuarios;
     }
 
     @Id
     @Column(name = "id", unique = true, nullable = false)
     private int id;
     
-    @Column(name = "texto")
+    @Column(name = "texto", nullable = false)
     private String texto;
     
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "continente")
-    private Set<Idioma> idiomas = new HashSet<>(0);
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "rango")
+    private Set<Usuario> usuarios = new HashSet<>(0);
 
     public int getId() {
         return this.id;
@@ -51,12 +53,12 @@ public class Continente implements java.io.Serializable {
         this.texto = texto;
     }
 
-    public Set<Idioma> getIdiomas() {
-        return this.idiomas;
+    public Set<Usuario> getUsuarios() {
+        return this.usuarios;
     }
 
-    public void setIdiomas(Set<Idioma> idiomas) {
-        this.idiomas = idiomas;
+    public void setUsuarios(Set<Usuario> usuarios) {
+        this.usuarios = usuarios;
     }
 
 }

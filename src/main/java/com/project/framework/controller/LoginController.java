@@ -8,8 +8,7 @@ package com.project.framework.controller;
 import com.project.framework.model.Cuenta;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  *
@@ -19,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class LoginController {
     
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @GetMapping("/login")
     public String setLogIn(ModelMap m) {
         m.addAttribute("logon", new Cuenta());
         return "framework/login";

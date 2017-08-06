@@ -10,30 +10,32 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "continente", schema = "public")
-public class Continente implements java.io.Serializable {
+@Table(name = "pregunta_seguridad", schema = "public")
+public class PreguntaSeguridad implements java.io.Serializable {
 
-    public Continente() {}
-
-    public Continente(int id) {
-        this.id = id;
+    public PreguntaSeguridad() {
     }
 
-    public Continente(int id, String texto, Set<Idioma> idiomas) {
+    public PreguntaSeguridad(int id, String texto) {
         this.id = id;
         this.texto = texto;
-        this.idiomas = idiomas;
+    }
+
+    public PreguntaSeguridad(int id, String texto, Set<Cuenta> cuentas) {
+        this.id = id;
+        this.texto = texto;
+        this.cuentas = cuentas;
     }
 
     @Id
     @Column(name = "id", unique = true, nullable = false)
     private int id;
-    
-    @Column(name = "texto")
+
+    @Column(name = "texto", nullable = false)
     private String texto;
-    
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "continente")
-    private Set<Idioma> idiomas = new HashSet<>(0);
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "preguntaSeguridad")
+    private Set<Cuenta> cuentas = new HashSet<>(0);
 
     public int getId() {
         return this.id;
@@ -51,12 +53,12 @@ public class Continente implements java.io.Serializable {
         this.texto = texto;
     }
 
-    public Set<Idioma> getIdiomas() {
-        return this.idiomas;
+    public Set<Cuenta> getCuentas() {
+        return this.cuentas;
     }
 
-    public void setIdiomas(Set<Idioma> idiomas) {
-        this.idiomas = idiomas;
+    public void setCuentas(Set<Cuenta> cuentas) {
+        this.cuentas = cuentas;
     }
 
 }

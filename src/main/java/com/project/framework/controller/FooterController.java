@@ -25,7 +25,7 @@ public class FooterController {
     
     @RequestMapping(value = "/footer", method = {RequestMethod.GET, RequestMethod.POST})
     public String setFooter(ModelMap m) {
-        m.addAttribute("listContinentes", continenteService.getContinentes());
+        m.addAttribute("continentes", continenteService.getContinentes());
         return "framework/footer";
     }
 }
