@@ -23,4 +23,5 @@ public interface IdiomaDao {
     public Idioma getIdioma(int id);
 
     public void deleteIdioma(int id);
+    
 }

@@ -55,4 +55,5 @@ public class ContinenteDaoImpl extends AbstractDao implements ContinenteDao {
             getSession().delete(continente);
         }
     }
+    
 }

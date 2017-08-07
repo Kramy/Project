@@ -25,4 +25,5 @@ public interface ContinenteDao {
     public Continente getContinente(int id);
 
     public void deleteContinente(int id);
+    
 }
