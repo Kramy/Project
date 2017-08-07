@@ -22,31 +22,30 @@ import org.springframework.web.bind.annotation.SessionAttributes;
  *
  * @author Rafael Benavides
  */
-
 @Controller
 @SessionAttributes("cuenta")
 public class FrameworkController {
-    
+
     @Autowired
     ContinenteService continenteService;
-    
+
     @Autowired
     IdiomaService idiomaService;
-    
+
     @GetMapping("/framework")
     public String setFramework() {
         return "framework/framework";
     }
-    
+
     @PostMapping("/framework")
-    public String logIn(@ModelAttribute("logon") Cuenta c, ModelMap m) {
+    public String logIn(@ModelAttribute("logon") Cuenta cuenta, ModelMap model) {
         Continente continente = continenteService.getContinente(1);
         Idioma idioma = idiomaService.getIdioma(1);
-        
-        m.addAttribute("email", c.getEmail());
-        m.addAttribute("seudonimo", continente.getTexto());
-        m.addAttribute("contrasena", idioma.getTexto());
-        m.addAttribute("cuenta", 1);
+
+        model.addAttribute("email", cuenta.getEmail());
+        model.addAttribute("seudonimo", continente.getTexto());
+        model.addAttribute("contrasena", idioma.getTexto());
+        model.addAttribute("cuenta", 1);
         return "framework/framework";
     }
 }

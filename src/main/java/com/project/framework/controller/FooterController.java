@@ -16,16 +16,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
  *
  * @author Rafael Benavides
  */
-
 @Controller
 public class FooterController {
-    
+
     @Autowired
     private ContinenteService continenteService;
-    
+
     @RequestMapping(value = "/footer", method = {RequestMethod.GET, RequestMethod.POST})
-    public String setFooter(ModelMap m) {
-        m.addAttribute("continentes", continenteService.getContinentes());
+    public String setFooter(ModelMap model) {
+        model.addAttribute("continentes", continenteService.getContinentesConIdioma());
         return "framework/footer";
     }
 }

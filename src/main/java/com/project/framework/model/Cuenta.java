@@ -12,7 +12,8 @@ import javax.persistence.Table;
 @Table(name = "cuenta", schema = "public")
 public class Cuenta implements java.io.Serializable {
 
-    public Cuenta() {}
+    public Cuenta() {
+    }
 
     public Cuenta(int id, PreguntaSeguridad preguntaSeguridad, Usuario usuario, String email, String contrasena, String respuestaSeguridad, String seudonimo) {
         this.id = id;
@@ -27,24 +28,24 @@ public class Cuenta implements java.io.Serializable {
     @Id
     @Column(name = "id", unique = true, nullable = false)
     private int id;
-    
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pregunta_seguridad", nullable = false)
     private PreguntaSeguridad preguntaSeguridad;
-    
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "usuario", nullable = false)
     private Usuario usuario;
-    
+
     @Column(name = "email", nullable = false)
     private String email;
-    
+
     @Column(name = "contrasena", nullable = false)
     private String contrasena;
-    
+
     @Column(name = "respuesta_seguridad", nullable = false)
     private String respuestaSeguridad;
-    
+
     @Column(name = "seudonimo", nullable = false)
     private String seudonimo;
 

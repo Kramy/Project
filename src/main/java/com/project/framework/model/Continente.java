@@ -13,7 +13,8 @@ import javax.persistence.Table;
 @Table(name = "continente", schema = "public")
 public class Continente implements java.io.Serializable {
 
-    public Continente() {}
+    public Continente() {
+    }
 
     public Continente(int id) {
         this.id = id;
@@ -28,10 +29,10 @@ public class Continente implements java.io.Serializable {
     @Id
     @Column(name = "id", unique = true, nullable = false)
     private int id;
-    
+
     @Column(name = "texto")
     private String texto;
-    
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "continente")
     private Set<Idioma> idiomas = new HashSet<>(0);
 

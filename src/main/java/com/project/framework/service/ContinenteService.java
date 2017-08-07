@@ -13,10 +13,16 @@ import java.util.List;
  * @author rbt
  */
 public interface ContinenteService {
-    
+
     public void addContinente(Continente c);
+
     public void updateContinente(Continente c);
+
     public List<Continente> getContinentes();
+
+    public List<Continente> getContinentesConIdioma();
+
     public Continente getContinente(int id);
+
     public void deleteContinente(int id);
 }

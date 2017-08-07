@@ -15,13 +15,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
  *
  * @author Rafael Benavides
  */
-
 @Controller
 public class RecuperarController {
-    
+
     @RequestMapping(value = "/recuperar", method = RequestMethod.GET)
-    public String setRecuperar(ModelMap m) {
-        m.addAttribute("recuperar", new Cuenta());
+    public String setRecuperar(ModelMap model) {
+        model.addAttribute("recuperar", new Cuenta());
         return "framework/recuperar";
     }
 }

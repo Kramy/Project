@@ -13,13 +13,13 @@ import org.springframework.beans.factory.annotation.Autowired;
  *
  * @author Rafael Benavides
  */
-public abstract class AbstractDAO {
-    
+public abstract class AbstractDao {
+
     @Autowired
     private SessionFactory sessionFactory;
-    
+
     protected Session getSession() {
         return sessionFactory.getCurrentSession();
     }
-    
+
 }

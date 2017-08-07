@@ -12,11 +12,17 @@ import java.util.List;
  *
  * @author rbt
  */
-public interface ContinenteDAO {
-    
-    public void addContinente(Continente c);
-    public void updateContinente(Continente c);
+public interface ContinenteDao {
+
+    public void addContinente(Continente continente);
+
+    public void updateContinente(Continente continente);
+
     public List<Continente> getContinentes();
+
+    public List<Continente> getContinentesConIdioma();
+
     public Continente getContinente(int id);
+
     public void deleteContinente(int id);
 }

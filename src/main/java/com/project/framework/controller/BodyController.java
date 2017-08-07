@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
  *
  * @author Rafael Benavides
  */
-
 @Controller
 public class BodyController {
+
     @RequestMapping(value = "/body", method = {RequestMethod.GET, RequestMethod.POST})
-    public String setBody(ModelMap m) {
+    public String setBody(ModelMap model) {
         return "framework/body";
     }
 }

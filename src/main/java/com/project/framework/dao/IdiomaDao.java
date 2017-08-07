@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.project.framework.service;
+package com.project.framework.dao;
 
 import com.project.framework.model.Idioma;
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author Rafael Benavides
  */
-public interface IdiomaService {
+public interface IdiomaDao {
 
     public void addIdioma(Idioma idioma);
 

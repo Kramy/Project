@@ -14,13 +14,12 @@ import org.springframework.web.bind.annotation.GetMapping;
  *
  * @author Rafael Benavides
  */
-
 @Controller
 public class LoginController {
-    
+
     @GetMapping("/login")
-    public String setLogIn(ModelMap m) {
-        m.addAttribute("logon", new Cuenta());
+    public String setLogIn(ModelMap model) {
+        model.addAttribute("logon", new Cuenta());
         return "framework/login";
     }
 }

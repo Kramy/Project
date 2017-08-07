@@ -5,7 +5,7 @@
  */
 package com.project.framework.service;
 
-import com.project.framework.dao.IdiomaDAO;
+import com.project.framework.dao.IdiomaDao;
 import com.project.framework.model.Idioma;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,30 +19,30 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class IdiomaServiceImpl implements IdiomaService {
-    
+
     @Autowired
-    private IdiomaDAO idiomaDAO;
-    
+    private IdiomaDao idiomaDAO;
+
     @Override
     public void addIdioma(Idioma i) {
         this.idiomaDAO.addIdioma(i);
     }
-    
+
     @Override
     public void updateIdioma(Idioma i) {
         this.idiomaDAO.updateIdioma(i);
     }
-    
+
     @Override
     public List<Idioma> getIdiomas() {
         return this.idiomaDAO.getIdiomas();
     }
-    
+
     @Override
     public Idioma getIdioma(int id) {
         return this.idiomaDAO.getIdioma(id);
     }
-    
+
     @Override
     public void deleteIdioma(int id) {
         this.idiomaDAO.deleteIdioma(id);

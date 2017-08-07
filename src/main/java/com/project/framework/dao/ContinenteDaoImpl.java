@@ -15,38 +15,44 @@ import org.springframework.stereotype.Repository;
  * @author rbt
  */
 @Repository
-public class ContinenteDAOImpl extends AbstractDAO implements ContinenteDAO {
-    
+public class ContinenteDaoImpl extends AbstractDao implements ContinenteDao {
+
     @Override
-    public void addContinente(Continente c) {
-        getSession().save(c);
+    public void addContinente(Continente continente) {
+        getSession().save(continente);
     }
-    
+
     @Override
-    public void updateContinente(Continente c) {
-        getSession().update(c);
+    public void updateContinente(Continente continente) {
+        getSession().update(continente);
     }
-    
+
     @Override
     public List<Continente> getContinentes() {
         List<Continente> continentes = getSession().createQuery("from Continente").list();
-        for (Continente continente: continentes) {
-            Hibernate.initialize(continente.getIdiomas());
-        }
         return continentes;
     }
     
     @Override
-    public Continente getContinente(int id) {
-        Continente c = (Continente) getSession().get(Continente.class, id);
-        return c;
+    public List<Continente> getContinentesConIdioma() {
+        List<Continente> continentes = getSession().createQuery("from Continente").list();
+        for (Continente continente : continentes) {
+            Hibernate.initialize(continente.getIdiomas());
+        }
+        return continentes;
     }
-    
+
+    @Override
+    public Continente getContinente(int id) {
+        Continente continente = (Continente) getSession().get(Continente.class, id);
+        return continente;
+    }
+
     @Override
     public void deleteContinente(int id) {
-        Continente c = (Continente) getSession().get(Continente.class, id);
-        if (null != c) {
-            getSession().delete(c);
+        Continente continente = (Continente) getSession().get(Continente.class, id);
+        if (null != continente) {
+            getSession().delete(continente);
         }
     }
 }

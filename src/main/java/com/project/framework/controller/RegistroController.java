@@ -15,13 +15,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
  *
  * @author Rafael Benavides
  */
-
 @Controller
 public class RegistroController {
-    
+
     @RequestMapping(value = "/registro", method = RequestMethod.GET)
-    public String setRegistro(ModelMap m) {
-        m.addAttribute("registro", new Cuenta());
+    public String setRegistro(ModelMap model) {
+        model.addAttribute("registro", new Cuenta());
         return "framework/registro";
     }
 }

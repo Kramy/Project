@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
  *
  * @author Rafael Benavides
  */
-
 @Controller
 public class HeaderController {
+
     @RequestMapping(value = "/header", method = {RequestMethod.GET, RequestMethod.POST})
-    public String setHeader(ModelMap m) {
+    public String setHeader(ModelMap model) {
         return "framework/header";
     }
 }

@@ -5,12 +5,12 @@
  */
 package com.project.framework.service;
 
-import com.project.framework.dao.ContinenteDAO;
 import com.project.framework.model.Continente;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import com.project.framework.dao.ContinenteDao;
 
 /**
  *
@@ -19,32 +19,37 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class ContinenteServiceImpl implements ContinenteService {
-    
+
     @Autowired
-    private ContinenteDAO continenteDAO;
-    
+    private ContinenteDao continenteDao;
+
     @Override
     public void addContinente(Continente c) {
-        this.continenteDAO.addContinente(c);
+        this.continenteDao.addContinente(c);
     }
-    
+
     @Override
     public void updateContinente(Continente c) {
-        this.continenteDAO.updateContinente(c);
+        this.continenteDao.updateContinente(c);
     }
-    
+
     @Override
     public List<Continente> getContinentes() {
-        return this.continenteDAO.getContinentes();
+        return this.continenteDao.getContinentes();
     }
-    
+
+    @Override
+    public List<Continente> getContinentesConIdioma() {
+        return this.continenteDao.getContinentesConIdioma();
+    }
+
     @Override
     public Continente getContinente(int id) {
-        return this.continenteDAO.getContinente(id);
+        return this.continenteDao.getContinente(id);
     }
-    
+
     @Override
     public void deleteContinente(int id) {
-        this.continenteDAO.deleteContinente(id);
+        this.continenteDao.deleteContinente(id);
     }
 }

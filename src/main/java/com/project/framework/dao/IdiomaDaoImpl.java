@@ -14,35 +14,35 @@ import org.springframework.stereotype.Repository;
  * @author Rafael Benavides
  */
 @Repository
-public class IdiomaDAOImpl extends AbstractDAO implements IdiomaDAO {
+public class IdiomaDaoImpl extends AbstractDao implements IdiomaDao {
     
     @Override
-    public void addIdioma(Idioma i) {
-        getSession().saveOrUpdate(i);
+    public void addIdioma(Idioma idioma) {
+        getSession().saveOrUpdate(idioma);
     }
     
     @Override
-    public void updateIdioma(Idioma i) {
-        getSession().update(i);
+    public void updateIdioma(Idioma idioma) {
+        getSession().update(idioma);
     }
     
     @Override
     public List<Idioma> getIdiomas() {
-        List<Idioma> listContinenets = getSession().createQuery("from Idioma").list();
-        return listContinenets;
+        List<Idioma> idiomas = getSession().createQuery("from Idioma").list();
+        return idiomas;
     }
     
     @Override
     public Idioma getIdioma(int id) {
-        Idioma i = (Idioma) getSession().get(Idioma.class, id);
-        return i;
+        Idioma idioma = (Idioma) getSession().get(Idioma.class, id);
+        return idioma;
     }
     
     @Override
     public void deleteIdioma(int id) {
-        Idioma i = (Idioma) getSession().get(Idioma.class, id);
-        if (null != i) {
-            getSession().delete(i);
+        Idioma idioma = (Idioma) getSession().get(Idioma.class, id);
+        if (null != idioma) {
+            getSession().delete(idioma);
         }
     }
 }

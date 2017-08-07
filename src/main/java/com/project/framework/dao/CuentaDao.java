@@ -5,18 +5,22 @@
  */
 package com.project.framework.dao;
 
-import com.project.framework.model.Idioma;
+import com.project.framework.model.Cuenta;
 import java.util.List;
 
 /**
  *
  * @author Rafael Benavides
  */
-public interface IdiomaDAO {
-    
-    public void addIdioma(Idioma i);
-    public void updateIdioma(Idioma i);
-    public List<Idioma> getIdiomas();
-    public Idioma getIdioma(int id);
-    public void deleteIdioma(int id);
+public interface CuentaDao {
+
+    public void addCuenta(Cuenta c);
+
+    public void updateCuenta(Cuenta c);
+
+    public List<Cuenta> getCuentas();
+
+    public Cuenta getCuenta(int id);
+
+    public void deleteCuenta(int id);
 }

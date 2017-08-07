@@ -30,10 +30,10 @@ public class Rango implements java.io.Serializable {
     @Id
     @Column(name = "id", unique = true, nullable = false)
     private int id;
-    
+
     @Column(name = "texto", nullable = false)
     private String texto;
-    
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "rango")
     private Set<Usuario> usuarios = new HashSet<>(0);
 
