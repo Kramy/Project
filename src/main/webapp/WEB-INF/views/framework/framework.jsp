@@ -15,7 +15,7 @@
         <!-- Information -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Project</title>
+        <title>Framework</title>
         
         <!-- Favicon -->
         <link rel="icon" href="<spring:url value="/resources/img/favicon/favicon.ico" />">
