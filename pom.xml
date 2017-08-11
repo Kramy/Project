@@ -94,6 +94,13 @@
             <version>1.2</version>
         </dependency>
         
+        <!-- Webjars Locator -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>webjars-locator</artifactId>
+            <version>0.32-1</version>
+        </dependency>
+        
         <!-- Bootstrap -->
         <dependency>
             <groupId>org.webjars</groupId>
@@ -136,17 +143,6 @@
                 <version>2.3</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
-                    <webResources>
-                        <!-- Añadimos versión de dependencias al web.xml -->
-                        <resource>
-                            <directory>${basedir}/src/main/webapp/WEB-INF</directory>
-                            <filtering>true</filtering>
-                            <targetPath>WEB-INF</targetPath>
-                            <includes>
-                                <include>**/web.xml</include>
-                            </includes>
-                        </resource>
-                    </webResources>
                 </configuration>
             </plugin>
             <plugin>

@@ -17,20 +17,4 @@
         </session-timeout>
     </session-config>
     
-    <!-- Parámetros de contexto -->
-    <context-param>
-        <param-name>bootstrapVersion</param-name>
-        <param-value>${bootstrap.version}</param-value>
-    </context-param>
-    
-    <context-param>
-        <param-name>jqueryVersion</param-name>
-        <param-value>${jquery.version}</param-value>
-    </context-param>
-    
-    <context-param>
-        <param-name>fontAwesomeVersion</param-name>
-        <param-value>${font-awesome.version}</param-value>
-    </context-param>
-    
 </web-app>

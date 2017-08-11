@@ -21,9 +21,9 @@
         <link rel="icon" href="<spring:url value="/resources/img/favicon/favicon.ico" />">
         
         <!-- Styles -->
-        <link rel="stylesheet" href="<spring:url value="/webjars/bootstrap/${initParam.bootstrapVersion}/css/bootstrap.min.css" />" />
-        <link rel="stylesheet" href="<spring:url value="/webjars/bootstrap/${initParam.bootstrapVersion}/css/bootstrap-theme.min.css" />" />
-        <link rel="stylesheet" href="<spring:url value="/webjars/font-awesome/${initParam.fontAwesomeVersion}/css/font-awesome.min.css" />" />
+        <link rel="stylesheet" href="<spring:url value="/webjars/bootstrap/css/bootstrap.min.css" />" />
+        <link rel="stylesheet" href="<spring:url value="/webjars/bootstrap/css/bootstrap-theme.min.css" />" />
+        <link rel="stylesheet" href="<spring:url value="/webjars/font-awesome/css/font-awesome.min.css" />" />
         <link rel="stylesheet" href="<spring:url value="/resources/css/main.css" />" />
         <link rel="stylesheet" href="<spring:url value="/resources/css/awesome-bootstrap-checkbox.css" />" />
         
@@ -31,8 +31,8 @@
         <script>
             var requestContextPath = '${pageContext.request.contextPath}';
         </script>
-        <script src="<spring:url value="/webjars/jquery/${initParam.jqueryVersion}/jquery.min.js" />"></script>
-        <script src="<spring:url value="/webjars/bootstrap/${initParam.bootstrapVersion}/js/bootstrap.min.js" />"></script>
+        <script src="<spring:url value="/webjars/jquery/jquery.min.js" />"></script>
+        <script src="<spring:url value="/webjars/bootstrap/js/bootstrap.min.js" />"></script>
         <script src="<spring:url value="/resources/js/scripts.js" />"></script>
         <script src="<spring:url value="/resources/js/framework/framework.js" />"></script>
     </head>
